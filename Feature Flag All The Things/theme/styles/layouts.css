@@ -1,0 +1,53 @@
+:root {
+  --slidev-theme-primary: #5d8392;
+}
+
+.slidev-layout {
+  h1 {
+    color: var(--slidev-theme-primary);
+  }
+}
+
+.slidev-layout.cover,
+.slidev-layout.intro {
+  @apply h-full grid;
+
+  h1 {
+    color: inherit;
+    @apply text-6xl leading-20;
+  }
+}
+
+.slidev-layout.fact {
+  @apply text-center grid h-full;
+
+  h1 {
+    @apply text-8xl font-700;
+  }
+
+  h1+p {
+    @apply font-700 text-2xl;
+  }
+}
+
+.slidev-layout.statement {
+  @apply text-center grid h-full;
+
+  h1 {
+    @apply text-6xl font-700;
+  }
+}
+
+.slidev-layout.quote {
+  @apply grid h-full;
+
+  h1+p {
+    @apply mt-2;
+  }
+}
+
+.slidev-layout.section {
+  h1 {
+    @apply text-6xl font-400 leading-20;
+  }
+}

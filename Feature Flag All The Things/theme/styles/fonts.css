@@ -1,0 +1,55 @@
+@font-face {
+  font-family: "Italiana";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url("/fonts/italiana-v16-latin-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Zilla Slab";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url("/fonts/zilla-slab-v11-latin-400.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Zilla Slab";
+  font-style: italic;
+  font-display: swap;
+  font-weight: 400;
+  src: url("/fonts/zilla-slab-v11-latin-400italic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Zilla Slab";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url("/fonts/zilla-slab-v11-latin-700.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Zilla Slab";
+  font-style: italic;
+  font-display: swap;
+  font-weight: 700;
+  src: url("/fonts/zilla-slab-v11-latin-700italic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Victor Mono";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url("/fonts/VictorMono-v1.5.3-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Victor Mono";
+  font-style: italic;
+  font-display: swap;
+  font-weight: 400;
+  src: url("/fonts/VictorMono-v1.5.3-Italic.woff2") format("woff2");
+}

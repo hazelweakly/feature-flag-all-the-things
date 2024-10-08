@@ -1,0 +1,917 @@
+/* VARIABLES GENERATED WITH TAILWIND CONFIG. */
+
+:root {
+  /* Aliased groups for convenience */
+  --space-0: 0;
+  --space-1: clamp(1rem, 0.87rem + 0.16vw, 1.08rem);
+  --space-2: clamp(1.13rem, 1.04rem + 0.43vw, 1.63rem);
+  --space-3: clamp(1.41rem, 1.23rem + 0.9vw, 2.44rem);
+  --space-4: clamp(1.76rem, 1.43rem + 1.65vw, 3.66rem);
+  --space-5: clamp(2.2rem, 1.63rem + 2.86vw, 5.48rem);
+  --space-6: clamp(2.75rem, 1.79rem + 4.77vw, 8.23rem);
+  --space-7: clamp(3.43rem, 1.88rem + 7.75vw, 12.34rem);
+  --space-8: clamp(4.29rem, 1.82rem + 12.36vw, 18.51rem);
+  --space-px: 2px;
+  --space-base: clamp(1rem, 1rem + 0vw, 1rem);
+  --space-0-5: clamp(0.72rem, 0.72rem + 0vw, 0.72rem);
+  --size-0: 0;
+  --size-1: clamp(1rem, 0.87rem + 0.16vw, 1.08rem);
+  --size-2: clamp(1.13rem, 1.04rem + 0.43vw, 1.63rem);
+  --size-3: clamp(1.41rem, 1.23rem + 0.9vw, 2.44rem);
+  --size-4: clamp(1.76rem, 1.43rem + 1.65vw, 3.66rem);
+  --size-5: clamp(2.2rem, 1.63rem + 2.86vw, 5.48rem);
+  --size-6: clamp(2.75rem, 1.79rem + 4.77vw, 8.23rem);
+  --size-7: clamp(3.43rem, 1.88rem + 7.75vw, 12.34rem);
+  --size-8: clamp(4.29rem, 1.82rem + 12.36vw, 18.51rem);
+  --size-px: 2px;
+  --size-base: clamp(1rem, 1rem + 0vw, 1rem);
+  --size-0-5: clamp(0.72rem, 0.72rem + 0vw, 0.72rem);
+
+  --slidev-code-font-family: "Victor Mono";
+}
+
+/* Convenience classes for setting flow-space */
+
+.flow-0>*+* {
+  --flow-space: var(--space-0);
+}
+
+.flow-1>*+* {
+  --flow-space: var(--space-1);
+}
+
+.flow-2>*+* {
+  --flow-space: var(--space-2);
+}
+
+.flow-3>*+* {
+  --flow-space: var(--space-3);
+}
+
+.flow-4>*+* {
+  --flow-space: var(--space-4);
+}
+
+.flow-5>*+* {
+  --flow-space: var(--space-5);
+}
+
+.flow-6>*+* {
+  --flow-space: var(--space-6);
+}
+
+.flow-7>*+* {
+  --flow-space: var(--space-7);
+}
+
+.flow-8>*+* {
+  --flow-space: var(--space-8);
+}
+
+.flow-px>*+* {
+  --flow-space: var(--space-px);
+}
+
+.flow-base>*+* {
+  --flow-space: var(--space-base);
+}
+
+.flow-0-5>*+* {
+  --flow-space: var(--space-0-5);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+.slidev-layout {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.slidev-layout li {
+  line-height: 1.6;
+}
+
+.slidev-layout p,
+.slidev-layout,
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.4;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:root {
+  color-scheme: light dark;
+  scrollbar-gutter: stable both-edges;
+  overflow-wrap: break-word;
+}
+
+/* copied from index.css */
+
+:root {
+  --hue-primary: 340;
+  --hue-secondary: 227;
+  --color-primary: var(--hue-primary) 35% 66%;
+  --color-secondary: var(--hue-secondary) 35% 66%;
+  --color-light: var(--hue-primary) 35% 93%;
+  --color-dark: var(--hue-primary) 35% 13%;
+  --color-fg: var(--color-dark);
+  --color-bg: var(--color-light);
+}
+
+html.dark {
+  --color-primary: var(--hue-primary) 35% 66%;
+  --color-secondary: var(--hue-secondary) 35% 66%;
+  --color-light: var(--hue-primary) 35% 87%;
+  --color-dark: var(--hue-primary) 35% 13%;
+  --color-fg: var(--color-light);
+  --color-bg: var(--color-dark);
+}
+
+#slide-content {
+  background-color: hsl(var(--color-bg));
+  color: hsl(var(--color-fg));
+  font-size: clamp(1.13rem, 1.04rem + 0.43vw, 1.63rem);
+  font-family: "Zilla Slab", ui-sans-serif, sans-serif;
+  line-height: 1.4;
+}
+
+button {
+  color: inherit;
+}
+
+hr {
+  margin-left: 0;
+}
+
+code,
+pre {
+  font-family: "Victor Mono", ui-mono, mono;
+  font-variant-ligatures: contextual;
+  max-width: max-content;
+  font-size: 0.9em;
+  --slidev-code-radius: 0;
+}
+
+.slidev-code,
+.bordered-box,
+pre {
+  line-height: 1.25;
+  border: clamp(0.43rem, 0.43rem + 0vw, 0.43rem) solid hsl(var(--color-secondary));
+  padding: clamp(0.43rem, 0.43rem + 0vw, 0.43rem) !important;
+  box-shadow: clamp(0.43rem, 0.43rem + 0vw, 0.43rem) clamp(0.43rem, 0.43rem + 0vw, 0.43rem) 0 0 hsl(var(--color-primary));
+  overflow-x: auto;
+  background-color: initial;
+}
+
+.slidev-layout :not(pre)>code {
+  background-color: hsl(var(--color-fg) / 20%);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.25;
+  font-family: "Zilla Slab", ui-serif, serif;
+  font-weight: normal;
+}
+
+h1 {
+  font-size: clamp(2.75rem, 1.79rem + 4.77vw, 8.23rem);
+  font-family: Italiana, ui-serif, serif;
+}
+
+h2 {
+  font-size: clamp(2.2rem, 1.63rem + 2.86vw, 5.48rem);
+  font-family: Italiana, ui-serif, serif;
+}
+
+h3 {
+  font-size: clamp(1.76rem, 1.43rem + 1.65vw, 3.66rem);
+}
+
+h4 {
+  font-size: clamp(1.41rem, 1.23rem + 0.9vw, 2.44rem);
+}
+
+a {
+  color: currentColor;
+  text-decoration-color: currentColor;
+}
+
+a:hover:not(.header-anchor) {
+  text-decoration: none;
+}
+
+table {
+  border-collapse: collapse;
+  font-weight: inherit;
+}
+
+th {
+  text-align: left;
+}
+
+:focus {
+  outline: 2px dotted;
+  outline-offset: calc(clamp(0.72rem, 0.72rem + 0vw, 0.72rem) / 2);
+}
+
+main:focus {
+  outline: 0;
+}
+
+h2,
+h3,
+h4 {
+  --flow-space: var(--space-4);
+}
+
+h2+*,
+h3+*,
+h4+* {
+  --flow-space: var(--space-base);
+}
+
+[id] {
+  scroll-margin-top: 1.5ex;
+}
+
+nav>ul {
+  padding: 0;
+}
+
+.header-anchor:is(:hover, :focus, :active)::after {
+  content: "#";
+  padding-left: 0.25em;
+  position: absolute;
+}
+
+.header-anchor:not(:hover, :focus, :active) {
+  text-decoration: none;
+}
+
+::selection {
+  background-color: hsl(var(--color-secondary) / 50%);
+}
+
+::marker {
+  color: hsl(var(--color-primary));
+}
+
+blockquote {
+  background-color: hsl(var(--color-bg));
+  border-left: clamp(1rem, 0.87rem + 0.16vw, 1.08rem) solid hsl(var(--color-secondary));
+  margin: clamp(1.13rem, 1.04rem + 0.43vw, 1.63rem) calc(-1 * clamp(1.13rem, 1.04rem + 0.43vw, 1.63rem));
+  padding: clamp(1rem, 0.87rem + 0.16vw, 1.08rem) clamp(1.13rem, 1.04rem + 0.43vw, 1.63rem);
+}
+
+/*
+ * Note to self: if anything in any of these sub css files contains
+ * a bare html element I need to unfuck that up in the postcss.config.js
+ */
+
+/* Compositions */
+
+/*
+CLUSTER
+More info: https://every-layout.dev/layouts/cluster/
+A layout that lets you distribute items with consitent
+spacing, regardless of their size
+CUSTOM PROPERTIES AND CONFIGURATION
+--gutter ($global-gutter): This defines the space
+between each item.
+--cluster-horizontal-alignment (flex-start) How items should align
+horizontally. Can be any acceptable flexbox aligmnent value.
+--cluster-vertical-alignment How items should align vertically.
+Can be any acceptable flexbox alignment value.
+*/
+
+.cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gutter, var(--space-1));
+  justify-content: var(--cluster-horizontal-alignment, flex-start);
+  align-items: var(--cluster-vertical-alignment, center);
+}
+
+.cluster>.skip {
+  margin-inline: auto;
+}
+
+.no-gutter {
+  row-gap: 0;
+}
+
+.cover {
+  display: flex;
+  flex-direction: column;
+  min-block-size: 100vh;
+  padding: 0;
+}
+
+.cover>* {
+  margin-block: 1rem;
+}
+
+.cover> :first-child:not(h1),
+.cover> :first-child:not(#main-content) {
+  margin-block-start: 0;
+}
+
+.cover> :last-child:not(h1),
+.cover> :last-child:not(#main-content) {
+  margin-block-end: 0;
+}
+
+.cover>h1 {
+  margin-block: auto;
+}
+
+/* Blocks */
+
+.center {
+  display: grid;
+  place-content: center;
+}
+
+figure.has-caption {
+  background-color: hsl(var(--color-secondary));
+}
+
+figure.has-caption img {
+  height: auto;
+}
+
+figure.has-caption figcaption {
+  text-align: center;
+  font-size: 0.8em;
+  background-color: hsl(var(--color-bg));
+  padding: clamp(0.72rem, 0.72rem + 0vw, 0.72rem) clamp(1rem, 0.87rem + 0.16vw, 1.08rem);
+  font-style: italic;
+}
+
+/* this is 2x2 somehow, the fuck? */
+
+.\32 x2 {
+  display: grid;
+  grid-template-rows: repeat(2, minmax(min-content, 1fr));
+  grid-template-columns: repeat(2, minmax(min-content, 1fr));
+  padding: 0;
+}
+
+table.\32 x2 tbody,
+.\32 x2 tr,
+.\32 x2 thead {
+  display: contents;
+}
+
+.\32 x2 td {
+  padding: var(--space-4) var(--space-1);
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  border-color: hsl(var(--color-secondary));
+  border-style: solid;
+  border-width: 3px;
+}
+
+/* Utilities */
+
+/* 
+FLOW UTILITY
+Info: https://piccalil.li/quick-tip/flow-utility/
+*/
+
+.flow>*+* {
+  margin-top: var(--flow-space, var(--space-2));
+}
+
+/*
+VISUALLY HIDDEN UTILITY
+Info: https://piccalil.li/quick-tip/visually-hidden/ 
+*/
+
+.visually-hidden,
+.skip-link:not(:focus) {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 0;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+}
+
+.wrapper {
+  width: calc(var(--space-7) * 6);
+  margin-inline: auto;
+  padding-inline: var(--space-1);
+  position: relative;
+}
+
+.home h1 {
+  font-size: clamp(4.29rem, 1.82rem + 12.36vw, 18.51rem);
+  text-align: center;
+}
+
+@supports (font-size: 1cqi) {
+  .home h1 {
+    font-size: clamp(clamp(1.76rem, 1.43rem + 1.65vw, 3.66rem),
+        100cqmin / 4.5,
+        clamp(4.29rem, 1.82rem + 12.36vw, 18.51rem));
+  }
+
+  .home {
+    container-type: inline-size;
+  }
+
+  main.wrapper:has(.home) {
+    flex: auto;
+    flex-direction: column;
+    place-content: center;
+    padding-inline: 0;
+  }
+
+  body.flow:has(.home) {
+    --flow-space: 0;
+  }
+}
+
+.skip-link {
+  top: var(--space-1);
+  left: var(--space-1);
+  position: absolute;
+  z-index: 1;
+  background: hsl(var(--color-bg));
+}
+
+/* when I have buttons, these will be button styles */
+
+.skip-link:active,
+.skip-link:focus,
+.skip-link:hover {
+  transition:
+    box-shadow 150ms ease-in-out,
+    transform 250ms cubic-bezier(0, 0, 0.2, 1),
+    background 50ms,
+    color 50ms;
+}
+
+.skip-link:focus,
+.skip-link:hover {
+  box-shadow:
+    0 4px 6px -1px rgb(0 0 0 / 0.1),
+    0 2px 4px -2px rgb(0 0 0 / 0.1);
+  transform: scale(1.05);
+}
+
+.icon>svg[role="img"] {
+  height: 1em;
+  width: auto;
+}
+
+/* quite a lot of this is nicked from */
+
+/* https://piccalil.li/tutorial/create-a-user-controlled-dark-or-light-mode/ */
+
+/* however, I use a 'dark' class since that matches more closely with how tailwind */
+
+/* thinks about things and lets me use it more naturally for the U in CUBE */
+
+:root {
+  --color-mode: "light";
+
+  --button-icon: var(--icon-moon);
+  --button-color: var(--color-dark);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-mode: "dark";
+
+    --button-icon: var(--icon-sun);
+    --button-color: var(--color-light);
+  }
+
+  :root:not(.dark) {
+    --button-icon: var(--icon-sun);
+    --button-color: var(--color-dark);
+  }
+}
+
+html.dark {
+  --button-icon: var(--icon-sun);
+  --button-color: var(--color-light);
+}
+
+/* If there’s no JS, there’s no need for the user toggle component to show */
+
+.no-js .user-toggle {
+  display: none;
+}
+
+.user-toggle button {
+  display: inline-flex;
+  background-color: initial;
+  border: none;
+}
+
+.user-toggle button .icon {
+  background: hsl(var(--button-color));
+  mask-image: var(--button-icon);
+  -webkit-mask-image: var(--button-icon);
+  height: 1em;
+  width: 1em;
+}
+
+/* Tailwind utilities */
+
+:root {
+  --hue-primary: 340;
+  --hue-secondary: 227;
+  --color-primary: var(--hue-primary) 35% 66%;
+  --color-secondary: var(--hue-secondary) 35% 66%;
+  --color-light: var(--hue-primary) 35% 93%;
+  --color-dark: var(--hue-primary) 35% 13%;
+  --color-fg: var(--color-dark);
+  --color-bg: var(--color-light);
+}
+
+html.dark {
+  --color-primary: var(--hue-primary) 35% 66%;
+  --color-secondary: var(--hue-secondary) 35% 66%;
+  --color-light: var(--hue-primary) 35% 87%;
+  --color-dark: var(--hue-primary) 35% 13%;
+  --color-fg: var(--color-light);
+  --color-bg: var(--color-dark);
+}
+
+.visible {
+  visibility: visible;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.static {
+  position: static;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
+.bottom {
+  bottom: clamp(1rem, 1rem + 0vw, 1rem);
+}
+
+.end {
+  inset-inline-end: clamp(1rem, 1rem + 0vw, 1rem);
+}
+
+.left {
+  left: clamp(1rem, 1rem + 0vw, 1rem);
+}
+
+.right {
+  right: clamp(1rem, 1rem + 0vw, 1rem);
+}
+
+.start {
+  inset-inline-start: clamp(1rem, 1rem + 0vw, 1rem);
+}
+
+.top {
+  top: clamp(1rem, 1rem + 0vw, 1rem);
+}
+
+.float-right {
+  float: right;
+}
+
+.float-left {
+  float: left;
+}
+
+.m {
+  margin: clamp(1rem, 1rem + 0vw, 1rem);
+}
+
+.my {
+  margin-top: clamp(1rem, 1rem + 0vw, 1rem);
+  margin-bottom: clamp(1rem, 1rem + 0vw, 1rem);
+}
+
+.me {
+  margin-inline-end: clamp(1rem, 1rem + 0vw, 1rem);
+}
+
+.block {
+  display: block;
+}
+
+.inline {
+  display: inline;
+}
+
+.flex {
+  display: flex;
+}
+
+.inline-flex {
+  display: inline-flex;
+}
+
+.table {
+  display: table;
+}
+
+.grid {
+  display: grid;
+}
+
+.contents {
+  display: contents;
+}
+
+.hidden {
+  display: none;
+}
+
+.size {
+  width: clamp(1rem, 1rem + 0vw, 1rem);
+  height: clamp(1rem, 1rem + 0vw, 1rem);
+}
+
+.h {
+  height: clamp(1rem, 1rem + 0vw, 1rem);
+}
+
+.min-h-\[10ex\] {
+  min-height: 10ex;
+}
+
+.w {
+  width: clamp(1rem, 1rem + 0vw, 1rem);
+}
+
+.w-full {
+  width: 100%;
+}
+
+.shrink {
+  flex-shrink: 1;
+}
+
+.grow {
+  flex-grow: 1;
+}
+
+.basis {
+  flex-basis: clamp(1rem, 1rem + 0vw, 1rem);
+}
+
+.transform {
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.gap {
+  gap: clamp(1rem, 1rem + 0vw, 1rem);
+}
+
+.border {
+  border-width: 1px;
+}
+
+.border-primary {
+  border-color: hsl(var(--color-primary));
+}
+
+.bg-bg {
+  background-color: hsl(var(--color-bg));
+}
+
+.bg-fg {
+  background-color: hsl(var(--color-fg));
+}
+
+.\!p {
+  padding: clamp(1rem, 1rem + 0vw, 1rem) !important;
+}
+
+.p {
+  padding: clamp(1rem, 1rem + 0vw, 1rem);
+}
+
+.px {
+  padding-left: clamp(1rem, 1rem + 0vw, 1rem);
+  padding-right: clamp(1rem, 1rem + 0vw, 1rem);
+}
+
+.py-3 {
+  padding-top: clamp(1.41rem, 1.23rem + 0.9vw, 2.44rem);
+  padding-bottom: clamp(1.41rem, 1.23rem + 0.9vw, 2.44rem);
+}
+
+.py-4 {
+  padding-top: clamp(1.76rem, 1.43rem + 1.65vw, 3.66rem);
+  padding-bottom: clamp(1.76rem, 1.43rem + 1.65vw, 3.66rem);
+}
+
+.pe {
+  padding-inline-end: clamp(1rem, 1rem + 0vw, 1rem);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.font-body {
+  font-family: "Zilla Slab", ui-sans-serif, sans-serif;
+}
+
+.font-display {
+  font-family: Italiana, ui-serif, serif;
+}
+
+.font-heading {
+  font-family: "Zilla Slab", ui-serif, serif;
+}
+
+.font-mono {
+  font-family: "Victor Mono", ui-mono, mono;
+}
+
+.text {
+  font-size: clamp(1rem, 1rem + 0vw, 1rem);
+}
+
+.text-0 {
+  font-size: 0;
+}
+
+.text-0-5 {
+  font-size: clamp(0.72rem, 0.72rem + 0vw, 0.72rem);
+}
+
+.text-1 {
+  font-size: clamp(1rem, 0.87rem + 0.16vw, 1.08rem);
+}
+
+.text-2 {
+  font-size: clamp(1.13rem, 1.04rem + 0.43vw, 1.63rem);
+}
+
+.text-3 {
+  font-size: clamp(1.41rem, 1.23rem + 0.9vw, 2.44rem);
+}
+
+.text-4 {
+  font-size: clamp(1.76rem, 1.43rem + 1.65vw, 3.66rem);
+}
+
+.text-5 {
+  font-size: clamp(2.2rem, 1.63rem + 2.86vw, 5.48rem);
+}
+
+.text-6 {
+  font-size: clamp(2.75rem, 1.79rem + 4.77vw, 8.23rem);
+}
+
+.text-7 {
+  font-size: clamp(3.43rem, 1.88rem + 7.75vw, 12.34rem);
+}
+
+.text-8 {
+  font-size: clamp(4.29rem, 1.82rem + 12.36vw, 18.51rem);
+}
+
+.text {
+  font-size: clamp(1rem, 1rem + 0vw, 1rem);
+}
+
+.text-px {
+  font-size: 2px;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.leading-tight {
+  line-height: 1.25;
+}
+
+.text-bg {
+  color: hsl(var(--color-bg));
+}
+
+.text-fg {
+  color: hsl(var(--color-fg));
+}
+
+.text-inherit {
+  color: inherit;
+}
+
+.text-primary {
+  color: hsl(var(--color-primary));
+}
+
+.text-secondary {
+  color: hsl(var(--color-secondary));
+}
+
+.text-transparent {
+  color: transparent;
+}
+
+.shadow {
+  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color),
+    0 1px 2px -1px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.outline {
+  outline-style: solid;
+}
+
+.blur {
+  --tw-blur: blur(8px);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.invert {
+  --tw-invert: invert(100%);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.filter {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.transition {
+  transition-property: color, background-color, border-color,
+    text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter,
+    backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.\*\/display\:table>* {
+  display: table;
+}
