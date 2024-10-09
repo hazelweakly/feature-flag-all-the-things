@@ -1,5 +1,8 @@
-_default:
+set allow-duplicate-recipes
+
+[private]
+default:
     @just --list --unsorted
 
-start-slides:
-  cd "./slides" && pnpm run dev
+import 'slides/justfile'
+import 'cluster/justfile'

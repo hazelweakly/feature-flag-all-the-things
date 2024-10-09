@@ -1,0 +1,7 @@
+[private]
+default:
+    @just --list --unsorted
+
+[group('slides')]
+start:
+  pnpm run dev

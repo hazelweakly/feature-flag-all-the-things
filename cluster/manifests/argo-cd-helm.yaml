@@ -1,0 +1,113 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: argocd
+---
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: argocd-server
+  namespace: argocd
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - kind: Rule
+      match: Host(`argocd.localhost`)
+      priority: 10
+      services:
+        - name: argocd-server
+          port: 80
+    - kind: Rule
+      match: Host(`argocd.localhost`) && Header(`Content-Type`, `application/grpc`)
+      priority: 11
+      services:
+        - name: argocd-server
+          port: 80
+          scheme: h2c
+  tls:
+    certResolver: default
+---
+apiVersion: helm.cattle.io/v1
+kind: HelmChart
+metadata:
+  name: argo-cd
+  namespace: argocd
+spec:
+  repo: https://argoproj.github.io/argo-helm
+  chart: argo-cd
+  targetNamespace: argocd
+  valuesContent: |-
+    fullnameOverride: "argocd"
+    global:
+      domain: argocd.localhost
+
+    configs:
+      params:
+        server.insecure: true
+---
+# See: https://argo-cd.readthedocs.io/en/stable/operator-manual/declarative-setup/#repository-credentials
+# This repo is public, so we don't need this, yey
+# apiVersion: v1
+# kind: Secret
+# metadata:
+#   name: private-repo
+#   namespace: argocd
+#   labels:
+#     argocd.argoproj.io/secret-type: repository
+# stringData:
+#   type: git
+#   url: git@github.com:hazelweakly/feature-flag-all-the-things.git
+#   # A mostly sensible-ish "just trying it out" option here is to create this
+#   # via the CLI manually after # bootstrapping the cluster and
+#   # then copy in your ssh key
+#   sshPrivateKey: |
+#     -----BEGIN OPENSSH PRIVATE KEY-----
+#     ...
+#     -----END OPENSSH PRIVATE KEY-----
+#
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: in-cluster
+  namespace: argocd
+  # This is used for the bootstrap ApplicationSet
+  annotations:
+    cluster_id: "in-cluster" # for use when argocd expects "in-cluster" for certain things
+    cluster_name: feature-flag-all-the-things # same as k3d metadata.name
+    domain: "argocd.localhost:50443"
+    addons_repo_url: "https://github.com/hazelweakly/feature-flag-all-the-things"
+    addons_repo_basepath: "cluster/argocd"
+    addons_repo_revision: main
+    environment: dev
+stringData: {}
+---
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: bootstrap-addons
+  namespace: argocd
+spec:
+  syncPolicy:
+    preserveResourcesOnDeletion: true
+  goTemplate: true
+  goTemplateOptions: ["missingkey=error"]
+  generators:
+    - clusters: {}
+  template:
+    metadata:
+      name: "bootstrap-addons-{{name}}"
+    spec:
+      project: default
+      source:
+        repoURL: '{{ index .metadata.annotations "addons_repo_url" }}'
+        path: '{{ index .metadata.annotations "addons_repo_basepath" }}/bootstrap'
+        targetRevision: '{{ index .metadata.annotations "addons_repo_revision" }}'
+        directory:
+          recurse: true
+      destination:
+        namespace: "argocd"
+        name: "{{name}}"
+      syncPolicy:
+        automated: {}

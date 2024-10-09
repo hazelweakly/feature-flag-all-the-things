@@ -1,0 +1,50 @@
+# k3d configuration file
+apiVersion: k3d.io/v1alpha5
+kind: Simple
+metadata:
+  name: feature-flag-all-the-things
+servers: 3
+agents: 5
+kubeAPI:
+  host: cluster.localhost
+  hostIP: 127.0.0.1
+  hostPort: "6445"
+# k3d defaults to 1.20? whyyy
+image: rancher/k3s:v1.31.1-k3s1
+ports:
+  - port: 50080:80
+    nodeFilters:
+      - loadbalancer
+  - port: 50443:443
+    nodeFilters:
+      - loadbalancer
+files:
+  - description: "argo-cd helm chart"
+    source: ./manifests/argo-cd-helm.yaml
+    # Resolved to /var/lib/rancher/k3s/server/manifests/custom/foo.yaml
+    destination: k3s-manifests-custom/argo-cd-helm.yaml
+    # nodeFilters:
+    #   - "server:*"
+  - description: "opentelemetry-demo helm chart"
+    source: ./manifests/opentelemetry-demo-helm.yaml
+    # Resolved to /var/lib/rancher/k3s/server/manifests/custom/foo.yaml
+    destination: k3s-manifests-custom/opentelemetry-demo-helm.yaml
+    # nodeFilters:
+    #   - "server:*"
+registries:
+  create:
+    name: registry.localhost
+    host: "0.0.0.0" # will have a random port
+    volumes:
+      # k3d expands environment variables so this works as expected
+      - $PWD/registry:/var/lib/registry # persist registry data locally
+options:
+  k3s:
+    nodeLabels:
+      # TODO: split the nodes into 2-3 groups with labels and then split the agents into two groups
+      - label: foo=bar # same as `--k3s-node-label 'foo=bar@agent:1'` -> this results in a Kubernetes node label
+        nodeFilters:
+          - agent:1
+  kubeconfig:
+    updateDefaultKubeconfig: false
+    switchCurrentContext: false

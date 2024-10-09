@@ -15,12 +15,21 @@
     {
       devShell = pkgs.mkShell {
         nativeBuildInputs = with pkgs; [
+          argocd
+          just
+          k3d
+          kubectl
+          kubectx
+          kubernetes-helm
+          kustomize
           nodePackages_latest.pnpm
           nodejs_latest
-          just
+          stern
         ];
         shellHook = ''
-          export PATH="$PWD/node_modules/.bin:$PATH"
+          export PATH="$PWD/slides/node_modules/.bin:$PATH"
+          export KUBECONFIG="$PWD/cluster/.kube/config"
+          export ARGOCD_OPTS="--grpc-web --insecure"
           just 2>/dev/null
         '';
       };

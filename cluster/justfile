@@ -1,0 +1,22 @@
+[private]
+default:
+    @just --list --unsorted
+
+# Makes sure things are going to go smoothly
+[group('cluster')]
+preflight:
+  bash "{{source_directory()}}/../scripts/preflight.sh"
+
+# Creates k3d cluster via the k3d-cluster.yaml config
+[group('cluster')]
+bootstrap: preflight
+  k3d cluster create --config "{{source_directory()}}/k3d-cluster.yaml"
+  k3d kubeconfig get feature-flag-all-the-things > "{{source_directory()}}/.kube/config"
+
+[group('cluster')]
+destroy:
+  k3d cluster delete --config {{source_directory()}}/k3d-cluster.yaml
+
+# Nukes the cluster and then bootstraps it again
+[group('cluster')]
+reset: destroy bootstrap
