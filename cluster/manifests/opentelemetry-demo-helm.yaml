@@ -27,7 +27,6 @@ spec:
     opentelemetry-collector:
       mode: daemonset
       service:
-        # enabled: false # this is supposed to be false when mode == daemonset
         # v-- There's a bug in the chart which causes this to throw a comparison error if not set explicitly
         internalTrafficPolicy: "Local"
 

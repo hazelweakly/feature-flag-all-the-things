@@ -81,7 +81,11 @@ metadata:
     addons_repo_basepath: "cluster/argocd"
     addons_repo_revision: main
     environment: dev
-stringData: {}
+stringData:
+  name: in-cluster
+  server: https://kubernetes.default.svc
+  config: |
+    { "tlsClientConfig": { "insecure": false }}
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
@@ -97,7 +101,7 @@ spec:
     - clusters: {}
   template:
     metadata:
-      name: "bootstrap-addons-{{name}}"
+      name: "bootstrap-addons-{{.name}}"
     spec:
       project: default
       source:
@@ -108,6 +112,6 @@ spec:
           recurse: true
       destination:
         namespace: "argocd"
-        name: "{{name}}"
+        name: "{{.name}}"
       syncPolicy:
         automated: {}

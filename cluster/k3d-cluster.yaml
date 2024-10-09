@@ -21,23 +21,17 @@ ports:
 files:
   - description: "argo-cd helm chart"
     source: ./manifests/argo-cd-helm.yaml
-    # Resolved to /var/lib/rancher/k3s/server/manifests/custom/foo.yaml
     destination: k3s-manifests-custom/argo-cd-helm.yaml
-    # nodeFilters:
-    #   - "server:*"
-  - description: "opentelemetry-demo helm chart"
-    source: ./manifests/opentelemetry-demo-helm.yaml
-    # Resolved to /var/lib/rancher/k3s/server/manifests/custom/foo.yaml
-    destination: k3s-manifests-custom/opentelemetry-demo-helm.yaml
-    # nodeFilters:
-    #   - "server:*"
+  # - description: "opentelemetry-demo helm chart"
+  #   source: ./manifests/opentelemetry-demo-helm.yaml
+  #   destination: k3s-manifests-custom/opentelemetry-demo-helm.yaml
 registries:
-  create:
-    name: registry.localhost
-    host: "0.0.0.0" # will have a random port
-    volumes:
-      # k3d expands environment variables so this works as expected
-      - $PWD/registry:/var/lib/registry # persist registry data locally
+  config: |
+    configs:
+      "registry-1.docker.io":
+        auth:
+          username: "$DOCKER_USERNAME"
+          password: "$DOCKER_PASSWORD"
 options:
   k3s:
     nodeLabels:

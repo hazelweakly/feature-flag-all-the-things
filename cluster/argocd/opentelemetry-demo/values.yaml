@@ -1,0 +1,33 @@
+opentelemetry-demo:
+  components:
+    frontendProxy:
+      ingress:
+        enabled: true
+        annotations: {}
+        hosts:
+          - host: otel-demo.localhost
+            paths:
+              - path: /
+                pathType: Prefix
+                port: 8080
+  opentelemetry-collector:
+    mode: daemonset
+    service:
+      # v-- There's a bug in the chart which causes this to throw a comparison error if not set explicitly
+      internalTrafficPolicy: "Local"
+
+    image:
+      repository: "otel/opentelemetry-collector-contrib"
+
+    command:
+      name: "otelcol-contrib"
+
+    presets:
+      logsCollection:
+        enabled: true
+      kubernetesAttributes:
+        enabled: true
+      kubeletMetrics:
+        enabled: true
+      hostMetrics:
+        enabled: true

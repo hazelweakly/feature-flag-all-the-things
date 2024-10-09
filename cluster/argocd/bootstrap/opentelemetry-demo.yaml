@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: opentelemetry-demo
+  namespace: argocd
+spec:
+  goTemplate: true
+  goTemplateOptions: ["missingkey=error"]
+  generators:
+    - clusters: {}
+  template:
+    metadata:
+      name: opentelemetry-demo
+    spec:
+      project: default
+      source:
+        - repoURL: '{{ index .metadata.annotations "addons_repo_url" }}'
+          path: '{{ index .metadata.annotations "addons_repo_basepath" }}/opentelemetry-demo'
+          targetRevision: '{{ index .metadata.annotations "addons_repo_revision" }}'
+          helm:
+            valueFiles:
+              - values.yaml
+      destination:
+        name: "{{.name}}"
+        namespace: "otel-demo"
+      syncPolicy:
+        syncOptions:
+          - CreateNamespace=true
+        automated: {}

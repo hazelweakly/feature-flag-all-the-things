@@ -1,0 +1,10 @@
+apiVersion: v2
+name: opentelemetry-demo
+description: Opentelemetry demo helm chart
+type: application
+version: 0.32.8
+
+dependencies:
+  - name: opentelemetry-demo
+    version: 0.32.8
+    repository: https://open-telemetry.github.io/opentelemetry-helm-charts
