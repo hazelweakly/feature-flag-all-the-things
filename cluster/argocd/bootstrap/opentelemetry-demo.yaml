@@ -14,12 +14,12 @@ spec:
     spec:
       project: default
       source:
-        - repoURL: '{{ index .metadata.annotations "addons_repo_url" }}'
-          path: '{{ index .metadata.annotations "addons_repo_basepath" }}/opentelemetry-demo'
-          targetRevision: '{{ index .metadata.annotations "addons_repo_revision" }}'
-          helm:
-            valueFiles:
-              - values.yaml
+        repoURL: '{{ index .metadata.annotations "addons_repo_url" }}'
+        path: '{{ index .metadata.annotations "addons_repo_basepath" }}/opentelemetry-demo'
+        targetRevision: '{{ index .metadata.annotations "addons_repo_revision" }}'
+        helm:
+          valueFiles:
+            - values.yaml
       destination:
         name: "{{.name}}"
         namespace: "otel-demo"

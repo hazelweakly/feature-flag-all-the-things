@@ -73,6 +73,8 @@ metadata:
   name: in-cluster
   namespace: argocd
   # This is used for the bootstrap ApplicationSet
+  labels:
+    argocd.argoproj.io/secret-type: cluster
   annotations:
     cluster_id: "in-cluster" # for use when argocd expects "in-cluster" for certain things
     cluster_name: feature-flag-all-the-things # same as k3d metadata.name
@@ -81,6 +83,7 @@ metadata:
     addons_repo_basepath: "cluster/argocd"
     addons_repo_revision: main
     environment: dev
+
 stringData:
   name: in-cluster
   server: https://kubernetes.default.svc

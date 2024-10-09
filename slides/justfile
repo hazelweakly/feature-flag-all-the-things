@@ -4,4 +4,4 @@ default:
 
 [group('slides')]
 start:
-  pnpm run dev
+  cd "{{source_directory()}}" ; pnpm run dev

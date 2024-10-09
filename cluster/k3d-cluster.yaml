@@ -22,10 +22,14 @@ files:
   - description: "argo-cd helm chart"
     source: ./manifests/argo-cd-helm.yaml
     destination: k3s-manifests-custom/argo-cd-helm.yaml
-  # - description: "opentelemetry-demo helm chart"
-  #   source: ./manifests/opentelemetry-demo-helm.yaml
-  #   destination: k3s-manifests-custom/opentelemetry-demo-helm.yaml
 registries:
+  create:
+    name: registry.localhost
+    host: "0.0.0.0"
+    hostPort: "50050"
+    volumes:
+      # k3d expands environment variables so this works as expected
+      - $PWD/registry/cluster:/var/lib/registry # persist registry data locally
   config: |
     configs:
       "registry-1.docker.io":

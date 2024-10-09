@@ -32,7 +32,7 @@ defaults:
   layout: default
 ---
 
-# Welcome to Slidev
+# Feature Flag All The Things
 
 Presentation slides for developers
 
