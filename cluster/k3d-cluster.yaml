@@ -6,7 +6,7 @@ metadata:
 servers: 3
 agents: 5
 kubeAPI:
-  host: cluster.dev
+  host: cluster.test
   hostIP: 127.0.0.1
   hostPort: "6445"
 # k3d defaults to 1.20? whyyy
@@ -24,7 +24,7 @@ files:
     destination: k3s-manifests-custom/argo-cd-helm.yaml
 registries:
   create:
-    name: registry.dev
+    name: registry.test
     host: "0.0.0.0"
     hostPort: "50050"
     volumes:

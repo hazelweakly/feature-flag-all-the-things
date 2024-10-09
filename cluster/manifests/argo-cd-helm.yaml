@@ -13,13 +13,13 @@ spec:
     - websecure
   routes:
     - kind: Rule
-      match: Host(`argocd.dev`)
+      match: Host(`argocd.test`)
       priority: 10
       services:
         - name: argocd-server
           port: 80
     - kind: Rule
-      match: Host(`argocd.dev`) && Header(`Content-Type`, `application/grpc`)
+      match: Host(`argocd.test`) && Header(`Content-Type`, `application/grpc`)
       priority: 11
       services:
         - name: argocd-server
@@ -40,7 +40,7 @@ spec:
   valuesContent: |-
     fullnameOverride: "argocd"
     global:
-      domain: argocd.dev
+      domain: argocd.test
 
     configs:
       params:
@@ -78,7 +78,7 @@ metadata:
   annotations:
     cluster_id: "in-cluster" # for use when argocd expects "in-cluster" for certain things
     cluster_name: feature-flag-all-the-things # same as k3d metadata.name
-    domain: "argocd.dev:50443"
+    domain: "argocd.test:50443"
     addons_repo_url: "https://github.com/hazelweakly/feature-flag-all-the-things"
     addons_repo_basepath: "cluster/argocd"
     addons_repo_revision: main

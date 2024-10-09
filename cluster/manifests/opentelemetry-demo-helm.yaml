@@ -19,7 +19,7 @@ spec:
           enabled: true
           annotations: {}
           hosts:
-            - host: otel-demo.dev
+            - host: otel-demo.test
               paths:
                 - path: /
                   pathType: Prefix

@@ -21,10 +21,10 @@ echo ""
 
 printf "Checking that the domains we're using are setup and resolvable... "
 for host in cluster registry argocd otel-demo otel-demo-collector; do
-  ping -c1 "${host}.dev" &>/dev/null || {
-    echoerr "${host}.dev is not resolvable!"
+  ping -c1 "${host}.test" &>/dev/null || {
+    echoerr "${host}.test is not resolvable!"
     extra_setup=1
-    manual_steps+=("127.0.0.1 $host.dev")
+    manual_steps+=("127.0.0.1 $host.test")
   }
 done
 
@@ -45,7 +45,7 @@ fi
 echo "Remember! k3d is configured to map the ingress ports 80 and 443 to different ones on the system"
 echo "Port 80 for ingress is mapped to port 50080 in k3d"
 echo "Port 443 for ingress is mapped to port 50443 in k3d"
-echo "That means that, for example, 'http://argocd.dev' is actually http://argocd.dev:50080"
+echo "That means that, for example, 'http://argocd.test' is actually http://argocd.test:50080"
 
 extra_setup=0
 manual_steps=()
