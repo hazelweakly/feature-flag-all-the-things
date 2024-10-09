@@ -83,7 +83,6 @@ metadata:
     addons_repo_basepath: "cluster/argocd"
     addons_repo_revision: main
     environment: dev
-
 stringData:
   name: in-cluster
   server: https://kubernetes.default.svc

@@ -20,7 +20,7 @@ extra_setup=0
 echo ""
 
 printf "Checking that the domains we're using are setup and resolvable... "
-for host in cluster registry argocd otel-demo; do
+for host in cluster registry argocd otel-demo otel-demo-collector; do
   ping -c1 "${host}.localhost" &>/dev/null || {
     echoerr "${host}.localhost is not resolvable!"
     extra_setup=1
@@ -50,3 +50,11 @@ echo "That means that, for example, 'http://argocd.localhost' is actually http:/
 extra_setup=0
 manual_steps=()
 echo ""
+
+echo "Checking to see if the docker username and password variables are set... "
+if [[ -z $DOCKER_USERNAME ]]; then
+  err "Docker username is not set"
+fi
+if [[ -z $DOCKER_PASSWORD ]]; then
+  err "Docker password is not set"
+fi
