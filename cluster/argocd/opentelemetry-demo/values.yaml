@@ -3,13 +3,13 @@ opentelemetry-demo:
     frontend:
       envOverrides:
         - name: PUBLIC_OTEL_EXPORTER_OTLP_TRACES_ENDPOINT
-          value: http://otel-demo-collector.localhost:50080/otlp-http/v1/traces
+          value: http://otel-demo-collector.dev:50080/otlp-http/v1/traces
     frontendProxy:
       ingress:
         enabled: true
         annotations: {}
         hosts:
-          - host: otel-demo.localhost
+          - host: otel-demo.dev
             paths:
               - path: /
                 pathType: Prefix
@@ -29,7 +29,7 @@ opentelemetry-demo:
     ingress:
       enabled: true
       hosts:
-        - host: otel-demo-collector.localhost
+        - host: otel-demo-collector.dev
           paths:
             - path: /
               pathType: Prefix
