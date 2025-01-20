@@ -82,14 +82,6 @@ Feature flags allow team**s** to change the behavior in a product, **at runtime*
 layout: intro
 ---
 
-# What are Feature Flags?
-
-Feature flags allow team**s** to change the behavior in a product, **at runtime**
-
----
-layout: intro
----
-
 # Feature flags allow teams to coordinate runtime optionality
 
 and in a distributed system, we get distributed runtime optionality
